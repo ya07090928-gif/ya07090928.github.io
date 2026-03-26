@@ -1,0 +1,231 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.85);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #fbbf24;
+    --accent-hover: #f59e0b;
+    --aspect-bg: rgba(15, 23, 42, 0.6);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    background-image: radial-gradient(circle at 50% 0%, #2e1065 0%, var(--bg-color) 70%);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 2.5rem;
+}
+
+h1 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 10px rgba(251, 191, 36, 0.3);
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.active {
+    display: block;
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Crystal Ball Button */
+.crystal-ball {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+    padding: 1rem;
+}
+
+.crystal-ball:hover {
+    transform: scale(1.05);
+}
+
+.crystal-ball:active {
+    transform: scale(0.95);
+}
+
+.crystal-ball .emoji {
+    font-size: 7rem;
+    filter: drop-shadow(0 0 20px rgba(167, 139, 250, 0.8));
+    animation: float 3s ease-in-out infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.crystal-ball .text {
+    padding: 0.8rem 2.5rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+    color: #1e1b4b;
+    border-radius: 9999px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.crystal-ball:hover .text {
+    box-shadow: 0 6px 25px rgba(251, 191, 36, 0.6);
+    transform: translateY(-2px);
+}
+
+/* Result Area */
+.result-card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    border-radius: 1.2rem;
+    padding: 2.5rem 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+#result-title {
+    color: var(--accent);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(251, 191, 36, 0.2);
+}
+
+#result-desc {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    color: #e2e8f0;
+}
+
+.aspects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.aspect {
+    background-color: var(--aspect-bg);
+    padding: 1.2rem;
+    border-radius: 0.8rem;
+    border: 1px solid rgba(167, 139, 250, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.aspect:hover {
+    transform: translateY(-2px);
+    border-color: rgba(167, 139, 250, 0.3);
+}
+
+.aspect h3 {
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.aspect p {
+    font-weight: 500;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+.ending-text {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed rgba(167, 139, 250, 0.3);
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 2px solid rgba(167, 139, 250, 0.6);
+    padding: 0.8rem 2.5rem;
+    border-radius: 9999px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(167, 139, 250, 0.15);
+    border-color: rgba(167, 139, 250, 0.9);
+    transform: translateY(-2px);
+}
+
+footer {
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .aspects {
+        grid-template-columns: 1fr;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .crystal-ball .emoji {
+        font-size: 6rem;
+    }
+}

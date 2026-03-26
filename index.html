@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ 神秘星象指引占卜 ✨</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ 星象指引占卜 ✨</h1>
+            <p>點擊下方水晶球，揭曉你今日的專屬運勢</p>
+        </header>
+
+        <main>
+            <div id="divination-area" class="active">
+                <button id="draw-btn" class="crystal-ball">
+                    <span class="emoji">🔮</span>
+                    <span class="text">開始占卜</span>
+                </button>
+            </div>
+
+            <div id="result-area" class="hidden">
+                <div class="result-card">
+                    <h2 id="result-title">大吉</h2>
+                    <p id="result-desc">星辰為你閃耀，今天是充滿奇蹟的一天。</p>
+                    
+                    <div class="aspects">
+                        <div class="aspect">
+                            <h3>💼 工作</h3>
+                            <p id="aspect-work">順利</p>
+                        </div>
+                        <div class="aspect">
+                            <h3>📚 學業</h3>
+                            <p id="aspect-study">進步</p>
+                        </div>
+                        <div class="aspect">
+                            <h3>❤️ 愛情</h3>
+                            <p id="aspect-love">甜蜜</p>
+                        </div>
+                        <div class="aspect">
+                            <h3>💰 金錢</h3>
+                            <p id="aspect-money">豐收</p>
+                        </div>
+                    </div>
+                    
+                    <p id="result-ending" class="ending-text">勇往直前吧！</p>
+                </div>
+                <button id="retry-btn" class="secondary-btn">🔄 再占卜一次</button>
+            </div>
+        </main>
+        
+        <footer>
+            <p>僅供娛樂，命運掌握在自己手中 🌟<br>願星光為你指引方向</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
